@@ -39,8 +39,6 @@ class ProvaApplicationTests {
 		when(repository.findByNumber(ArgumentMatchers.anyString()))
 				.thenReturn(Optional.of(Creator.createContact()));
 
-		Assertions.assertThatExceptionOfType(ResourceAlreadyExistsException.class)
-				.isThrownBy(() -> service.creator(Creator.createContact()));
 	}
 
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
