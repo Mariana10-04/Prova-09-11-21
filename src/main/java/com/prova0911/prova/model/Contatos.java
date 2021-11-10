@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 @Entity
 @Data
-@Builder
+//@Builder
 @Table(name = "contatos")
 public class Contatos {
 
@@ -29,4 +29,13 @@ public class Contatos {
         number = entity.getNumber();
     }
 
+
+    public Contatos() {
+    }
+
+    public Contatos(String nome, String email, String number) {
+        this.nome = nome;
+        this.email = email;
+        this.number = number;
+    }
 }

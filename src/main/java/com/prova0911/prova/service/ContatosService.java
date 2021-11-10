@@ -42,5 +42,9 @@ public class ContatosService {
             repository.save(contatos);
         }
     }
+
+    public Contatos creator(Contatos contact) {
+        return contact;
+    }
 }
 
