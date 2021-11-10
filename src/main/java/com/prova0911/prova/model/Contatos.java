@@ -22,7 +22,7 @@ public class Contatos {
     private String email;
     private String number;
 
-    public Contatos(Contatos entity){
+    public Contatos(Contatos entity) {
         id = entity.getId();
         nome = entity.getNome();
         email = entity.getEmail();

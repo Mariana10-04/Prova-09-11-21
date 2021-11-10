@@ -27,8 +27,9 @@ public class ContatosService {
 
     public Contatos save(Contatos contato) {
         Optional<Contatos> contatoProcurado = repository.findByNumber(contato.getNumber());
-            return repository.save(contato);
+        return repository.save(contato);
     }
+
     public void delete(Long id) {
         repository.deleteById(id);
     }
