@@ -9,4 +9,5 @@ import org.springframework.stereotype.Component;
         public static Contatos createContact() {
             return new Contatos("Mariana Gon", "marianagondasilva@gmail.com", "45998072662");
         }
+
 }
