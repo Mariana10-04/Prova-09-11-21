@@ -3,6 +3,7 @@ package com.prova0911.prova.service;
 import com.prova0911.prova.model.Contatos;
 import com.prova0911.prova.repository.ContatosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -40,14 +41,7 @@ public class ContatosService {
         repository.deleteById(id);
     }
 
-    public void update(Contatos contatos) {
-        Optional<Contatos> salaParaMudar = repository.findByNumber(contatos.getNumber());
-
-        if (salaParaMudar.isEmpty()) {
-        } else {
-            repository.save(contatos);
-        }
-    }
+    public Contatos update(Contatos contatos) {return repository.save(contatos);}
 
     public Contatos creator(Contatos contact) {
         return contact;

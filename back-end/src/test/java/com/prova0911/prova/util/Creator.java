@@ -6,8 +6,12 @@ import org.springframework.stereotype.Component;
     @Component
     public class Creator {
 
-        public static Contatos createContact() {
-            return new Contatos("Mariana Gon", "marianagondasilva@gmail.com", "45998072662");
+        public static Contatos createContact(){
+            return Contatos.builder()
+                    .nome("marlao berreiro")
+                    .email("urrante@gmail.com")
+                    .number("1111111511")
+                    .build();
         }
 
 }
