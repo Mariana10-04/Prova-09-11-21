@@ -7,5 +7,7 @@ import java.util.Optional;
 
 public interface ContatosRepository extends JpaRepository<Contatos, Long> {
 
+    Optional<Contatos> findById(Long id);
+    Optional<Contatos> findByEmail(String email);
     Optional<Contatos> findByNumber(String number);
 }

@@ -26,10 +26,16 @@ public class ContatosService {
     }
 
     public Contatos save(Contatos contato) {
-        Optional<Contatos> contatoProcurado = repository.findByNumber(contato.getNumber());
-        return repository.save(contato);
-    }
 
+        Optional<Contatos> emailFound = repository.findByEmail(contato.getEmail());
+        Optional<Contatos> numberFound = repository.findByNumber(contato.getNumber());
+
+        if (emailFound.isPresent() || numberFound.isPresent()) {
+            throw new RuntimeException("Email ou Telefone já existe!!!");
+        } else {
+            return repository.save(contato);
+        }
+    }
     public void delete(Long id) {
         repository.deleteById(id);
     }
